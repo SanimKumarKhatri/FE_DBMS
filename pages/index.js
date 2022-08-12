@@ -16,14 +16,17 @@ function HomePage(){
             </div>
             <div>
                     <Link href='/login' passHref>
-                    <Button icon={<User set='bold'/>} bordered ghost size="lg" color="success">Login</Button>
+                    <Button icon={<User set='bold'/>} bordered ghost size="lg" color="primary">Login</Button>
                     </Link>
                 <Spacer y={1}/>
                     <Link href='/register' passHref>
-                    <Button icon={<Plus set='bold'/>} bordered ghost size="lg" color="success">Register</Button>
+                    <Button icon={<Plus set='bold'/>} bordered ghost size="lg" color="primary">Register</Button>
                     </Link>
-                <Spacer y={5}/>
+                <Spacer y={1}/>
             </div>
+            <div className={Indexstyles.description}> <p> A DBMS project named ecole which is an online education and collaborative platform for school, university or any educational
+            institution.</p>
+            <p> By: Krishbin Poudel, Sanim Kumar Chhetri, Kailash Pantha, Aditya Raj Pandey</p></div>
             
         </div>
     )
