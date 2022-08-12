@@ -1,9 +1,47 @@
+.Nav-container{
+  display: flex;
+  height: 670px;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 50px;
+  margin-right: 3%;
+  border-right: black;
+  background-color: #02C39A;
+  justify-content:flex-start;
+  font-weight: bold;
+}
+
+.line{
+  width: 150px;
+  height: 0px;
+  margin-top: 30px;
+  border: 1px solid #ffffff;
+}
+
+.user{
+  padding-top: 8px;
+  padding-left: 15px;
+}
+
+.image{
+  width: 63px;
+  height: 50px;
+  margin-left: 20px;
+  margin-top: 30px;
+  
+  background: url('../Pics/ecolewhite.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 ul.nav {
-    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;;
     overflow: hidden;
     margin: 0;
     padding: 0;
-    background-color: #333;
+    z-index: 2;
   }
   
   li.nav {
@@ -22,5 +60,5 @@ ul.nav {
   li.nav a:hover {
       display: block;
     background-color: white;
-    color:black;
+    color:#02C39A;
   }

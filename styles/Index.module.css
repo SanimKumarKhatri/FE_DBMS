@@ -1,0 +1,44 @@
+.image{
+    width: 93px;
+    height: 80px;
+    left: 648px;
+    top: 108px;
+    
+    background: url('../Pics/ecole.png');
+    background-size: cover;
+}
+
+.line{
+    width: 422px;
+    height: 0px;
+    margin-top: 30px;
+    border: 2px solid #02C39A;
+}
+
+.title {
+    width: 420px;
+    height: 61px;
+    left: calc(50% - 420px/2);
+    top: calc(50% - 61px/2 - 156.5px);
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 61px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #02C39A;
+}
+
+.rectangle1 {
+    position: absolute;
+    width: 1440px;
+    height: 156px;
+    left: 0px;
+    top: 0px;
+
+    background: rgba(0, 0, 0, 0.63);
+}

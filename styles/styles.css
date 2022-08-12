@@ -5,6 +5,22 @@
     background: white;
 }
 
+.flex-container{
+    display: flex;
+    height: 670px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.group{
+    display: flex;
+    height: 220px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; 
+}
+
 .center form{
     padding:0 40px;
     box-sizing: border-box;
@@ -26,8 +42,8 @@
 }
 
 .cluster{
-    position:absolute;
-    left:60%;
+    position:fixed;
+    left:0%;
     transform: translate(60%,120%);
 }
 
