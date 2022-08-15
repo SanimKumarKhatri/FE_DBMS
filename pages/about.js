@@ -2,6 +2,7 @@ import Navbar from '../components/navbar';
 import {authInitialProps} from '../lib/auth';
 
 function About(props) {
+    About.getInitialProps = authInitialProps();
     return (
         <>
         <Navbar {...props}/>
@@ -10,6 +11,6 @@ function About(props) {
     )
   }
   
-  About.getInitialProps = authInitialProps();
+
 
   export default About

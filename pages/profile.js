@@ -7,7 +7,7 @@ function  Profile(props) {
     return (
         <div className={Homestyles.container}>
             <Navbar {...props}/>
-            <h1> Welcome {props.auth.name} </h1>
+            <h1> Welcome {props.auth? props.auth.name : 'Guest'} </h1>
         </div>
     )
   }
