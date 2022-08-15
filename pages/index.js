@@ -5,8 +5,8 @@ import Indexstyles from '../styles/Index.module.css'
 
 function HomePage(){
     return(
-        <div class="flex-container">
-            <div class = "group">
+        <div className="flex-container">
+            <div className = "group">
                 <div className={Indexstyles.image}></div>
                 <hr className={Indexstyles.line} />   
                 <div className={Indexstyles.title}>
