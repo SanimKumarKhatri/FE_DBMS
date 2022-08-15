@@ -27,7 +27,7 @@ function Index(props){
             </div>
             <div className={Indexstyles.description}> <p> A DBMS project named ecole which is an online education and collaborative platform for school, university or any educational
             institution.</p>
-            <p> By: Krishbin Poudel, Sanim Kumar Chhetri, Kailash Pantha, Aditya Raj Pandey</p></div>
+            <p> By: Krishbin Poudel, Sanim Kumar Khatri, Kailash Pantha, Aditya Raj Pandey</p></div>
             
         </div>
     )
