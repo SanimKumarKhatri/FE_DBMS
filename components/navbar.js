@@ -2,6 +2,7 @@ import Link from 'next/link'
 import {Button, Spacer, Text } from '@nextui-org/react'
 import {Home, Plus, User} from 'react-iconly';
 import React from 'react';
+import { logoutUSer } from '../lib/auth';
 
 const Navbar=({auth})=>{
     const user = auth || {};
@@ -17,7 +18,7 @@ const Navbar=({auth})=>{
                     <React.Fragment>
                 <li className="nav"><Link href='/home   '><a>Home</a></Link></li>
                 <li className="nav"><Link href='/about'><a>About Us</a></Link></li>
-                <li className='nav'><button>Logout</button></li>
+                <li className='nav' onClick={logoutUSer}><button>Logout</button></li>
                 </React.Fragment>):(
                 <li className="nav"><Link href ='/login'><a>Login</a></Link></li>)
                 }   
