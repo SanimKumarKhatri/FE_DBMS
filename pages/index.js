@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import {Button, Spacer, Text } from '@nextui-org/react'
 import {Home, Plus, User} from 'react-iconly';
-import Indexstyles from '../styles/Index.module.css'
+import Indexstyles from '../styles/Index.module.css';
+import { authInitialProps } from '../lib/auth';
 
-function HomePage(){
+function Index(props){
     return(
         <div className="flex-container">
             <div className = "group">
@@ -32,4 +33,6 @@ function HomePage(){
     )
 }
 
-export default HomePage;
+Index.getInitialProps = authInitialProps();
+
+export default Index;

@@ -1,15 +1,26 @@
 {
+  "name": "ecole",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.9",
+    "axios": "^0.27.2",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.1",
+    "isomorphic-fetch": "^3.0.0",
     "next": "^12.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-iconly": "^2.2.5"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "nodemon server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
