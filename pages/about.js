@@ -1,12 +1,15 @@
-import Navbar from '../components/navbar'
+import Navbar from '../components/navbar';
+import {authInitialProps} from '../lib/auth';
 
-function About() {
+function About(props) {
     return (
         <>
-        <Navbar />
+        <Navbar {...props}/>
         <div>About</div>
         </>
     )
   }
   
+  About.getInitialProps = authInitialProps();
+
   export default About

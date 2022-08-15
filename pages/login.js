@@ -6,8 +6,8 @@ import { render } from "react-dom";
 import {loginUser} from '../lib/auth';
 import Router from "next/router";
 
-class login extends React.Component{
-    
+
+class login extends React.Component {
     state ={
         username: '',
         password:'',
@@ -45,31 +45,28 @@ class login extends React.Component{
             css={{
                     textGradient: "45deg, $blue600 -20%, $green600 50%",
                 }}>&nbsp;&nbsp;Welcome to Ecole</Text>
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <Spacer y={1.6} />  
                 <div className="username">
                     <Input  
-                    id="username"
-                    name="username" 
-                    labelPlaceholder="Username" 
-                    onChange={this.handleChange}
-                    bordered fullWidth="true"  
-                    color="default"/>
+                    id="username" 
+                    name="username"
+                    labelPlaceholder="Username"
+                    onChange={this.handleChange} 
+                    bordered fullWidth="true"  color="default"/>
                 </div>
                 <div className="password">
                     <Spacer y={1.6} />  
-                    <Input.Password
+                    <Input.Password  
                     id="password" 
                     name="password" 
-                    labelPlaceholder="Password" 
-                    onChange={this.handleChange}
+                    labelPlaceholder="Password"
+                    onChange={this.handleChange}  
                     bordered fullWidth color="default"/>
                 </div>
                 <div className="login_button">
                     <Spacer y={1.6} />
-                    <Button disabled={isloading}
-                    type="submit" 
-                    icon={<UserIcon fill='currentcolor'/>} 
+                    <Button disabled={isloading} type="submit" icon={<UserIcon fill='currentcolor'/>} 
                     color='success' ghost size='lg'>Sign in</Button>
                 </div>
                 {error && <div>
