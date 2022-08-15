@@ -11,6 +11,6 @@ function  home(props) {
     )
   }
   
-  home.getInitialProps = authInitialProps();
+  home.getInitialProps = authInitialProps(true);
 
   export default home;

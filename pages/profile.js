@@ -26,4 +26,4 @@
     }
   }
 
-  Profile.getInitialProps = authInitialProps();
+  Profile.getInitialProps = authInitialProps(true);
