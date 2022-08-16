@@ -16,7 +16,12 @@ class MyDocument extends Document {
   }
 
   render() {
-    const { user={} } = this.props;
+    const user = {
+      name: this.props.name,
+      email: this.props.email,
+      phone: this.props.phone,
+      type: this.props.type
+    };
     return (
       <Html lang="en">
         <Head>{CssBaseline.flush()}</Head>
