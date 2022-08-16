@@ -1,8 +1,8 @@
 
- import Navbar from '../components/navbar'
- import Homestyles from '../styles/Home.module.css'
+ import Navbar from '../../components/navbar'
+ import Homestyles from '../../styles/Home.module.css'
  import React from 'react';
- import { getUserProfile, authInitialProps} from '../lib/auth';
+ import { getUserProfile, authInitialProps} from '../../lib/auth';
  
  export default class Profile extends React.Component{
 
