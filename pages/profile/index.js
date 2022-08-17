@@ -12,10 +12,15 @@
     };
 
     componentDidMount(){
-        getUserProfile().then((data) => {
-            console.log(data);
-            this.setState({user: data})
-            });
+        // getUserProfile().then((data) => {
+        //     console.log(data);
+        //     this.setState({user: data})
+        //     });
+        //for temporary purpose
+        fetch('/data.json').then((res)=>res.json()).then((data)=>{
+            console.log(data)
+            this.setState({user: data});
+        })  
     }
 
     render(){
@@ -27,8 +32,8 @@
             <h2>Welcome <strong>{this.props.auth.name}</strong></h2>
             {this.state.user.map((data,key)=>(
                 <div key={key}>
-                    <Link href={`/profile/${data.name}`}>
-                        {data.id + '. ' + data.name}
+                    <Link href={`/profile/${data.title}`}>
+                        {data.id + '. ' + data.title}
                     </Link>
                 </div>
             ))}
