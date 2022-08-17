@@ -43,7 +43,7 @@ class login extends React.Component {
         <>
         <div class="login-container">
             <div className="Header"> 
-            <Link href='/index'>
+            <Link href='/'>
             <Button icon={<Home fill="white" />} light color = "secondary" auto ghost>
             </Button>
             </Link>
