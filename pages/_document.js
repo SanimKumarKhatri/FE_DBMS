@@ -20,7 +20,8 @@ class MyDocument extends Document {
       name: this.props.name,
       email: this.props.email,
       phone: this.props.phone,
-      type: this.props.type
+      type: this.props.type,
+      role: this.props.role
     };
     return (
       <Html lang="en">
