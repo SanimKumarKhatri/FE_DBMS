@@ -62,7 +62,8 @@ app.prepare().then(()=>{
         if( token && token.email){
             const { data } = await axios.get('https://jsonplaceholder.typicode.com/users');
             const userProfile = data.find(user => user.email === token.email);
-            return res.json({user: userProfile});
+            console.log(userProfile);
+            return res.json([userProfile]);
         }
         res.sendStatus(404);
     })

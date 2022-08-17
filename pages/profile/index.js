@@ -3,6 +3,7 @@
  import Homestyles from '../../styles/Home.module.css'
  import React from 'react';
  import { getUserProfile, authInitialProps} from '../../lib/auth';
+ import Link from 'next/link';
  
  export default class Profile extends React.Component{
 
@@ -11,7 +12,10 @@
     };
 
     componentDidMount(){
-        getUserProfile().then(user => this.setState({user}));
+        getUserProfile().then((data) => {
+            console.log(data);
+            this.setState({user: data})
+            });
     }
 
     render(){
@@ -19,7 +23,16 @@
         <>
         <div className={Homestyles.container}>
             <Navbar {...this.props}/>
-            <pre>{JSON.stringify(this.state.user,null,2)}</pre>
+            <div>
+            <pre>{JSON.stringify(this.state.user)}</pre>
+            {/* {this.state.user.map((data,key)=>(
+                <div key={key}>
+                    <Link href={`/profile/${data.name}`}>
+                        {data.id + '. ' + data.name}
+                    </Link>
+                </div>
+            ))} */}
+            </div>
         </div>
         </>
     )
