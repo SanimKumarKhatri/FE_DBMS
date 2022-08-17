@@ -13,22 +13,59 @@ class login extends React.Component {
         username: '',
         password:'',
         error: '',
-        isloading: false
+        isloading: false,
+        csrfToken: ''
     };
+
+   componentDidMount(){
+    React.useEffect(()=>{
+        //fetching url
+        fetch("http://localhost:8000/account/csrf/")
+        .then((res)=>{
+            let csrfToken = res.headers.get("X-CSRFToken",{
+                credentials: "include",
+            })
+            this.state.csrfToken =csrfToken;
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    },[])
+   }
 
     handleChange =  event =>{
         this.setState({[event.target.name]: event.target.value});
     }
 
     handleSubmit = event =>{
-        const {username, password } =this.state;
+        const {username, password, error, isloading, csrfToken} =this.state;
 
         event.preventDefault();
         this.setState({error: ''});
-        loginUser(username,password).then(()=>{
-            Router.push('/profile');
+        fetch("http://localhost:8000/account/login/",{
+        method: "POST",
+        headers:{
+            "Content-Type" : "application/json",
+            "X-CSRFToken": csrfToken,
+        },
+        credentials: "include",
+        body: JSON.stringify({username: username, password: password}),
+        }).then(response=>{
+            if(!response.ok){
+                throw new Error('Couldnt connect to server')
+            }
+        }).then((data)=>{
+            console.log(data);
+            Router.push('/profile')
         })
-        .catch(this.showError);
+        .catch((err)=>{
+            console.log(err);
+            this.state.error="Username or password incorrect";
+        })
+        // loginUser(username,password).then(()=>{
+        //     Router.push('/profile');
+        // })
+        // .catch(this.showError);
     };
 
     showError = err =>{
