@@ -10,6 +10,7 @@ const app = next({dev});
 const handle = app.getRequestHandler();
 
 const AUTH_USER_TYPE = "authenticated";
+const ROLE = "student";
 const COOKIE_SECRECT = 'adsdsa35435';
 const COOKIE_OPTIONS = {
     httpOnly: true,
@@ -44,7 +45,8 @@ app.prepare().then(()=>{
             name: user.name,
             email: user.email,
             phone: user.phone,
-            type: AUTH_USER_TYPE             
+            type: AUTH_USER_TYPE,
+            role: ROLE             
         }
         console.log(userData);  
         res.cookie('token', userData, COOKIE_OPTIONS);

@@ -6,6 +6,7 @@ import Navbar from '../../components/navbar'
 
 class subjectDetails extends React.Component{
     state ={
+        //for test without api
         subdet: [{
             marks:20,
             teacher: "sanim"

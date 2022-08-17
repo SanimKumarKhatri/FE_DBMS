@@ -8,7 +8,7 @@
  export default class Profile extends React.Component{
 
     state ={
-        user: null
+        user: []
     };
 
     componentDidMount(){
@@ -24,14 +24,14 @@
         <div className={Homestyles.container}>
             <Navbar {...this.props}/>
             <div>
-            <pre>{JSON.stringify(this.state.user)}</pre>
-            {/* {this.state.user.map((data,key)=>(
+            <h2>Welcome <strong>{this.props.auth.name}</strong></h2>
+            {this.state.user.map((data,key)=>(
                 <div key={key}>
                     <Link href={`/profile/${data.name}`}>
                         {data.id + '. ' + data.name}
                     </Link>
                 </div>
-            ))} */}
+            ))}
             </div>
         </div>
         </>
