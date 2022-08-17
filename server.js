@@ -70,6 +70,17 @@ app.prepare().then(()=>{
         res.sendStatus(404);
     })
 
+    server.get('/api/profile/sub', async(req,res)=>{
+        const username = req.signedCookies.token.name;
+        //for query 
+        // fetch('/data.json').then((res)=>res.json()).then((data)=>{
+        //     console.log(data)
+        //     this.setState({subject: data});
+        // }) 
+        const {data} = await axios.get('https://jsonplaceholder.typicode.com/todos');
+        return res.json(data);
+    })
+
     server.get('*', (req,res)=>{
         return handle(req,res);
     })
